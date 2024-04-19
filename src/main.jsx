@@ -9,6 +9,7 @@ import Home from './Pages/Home/Home';
 import ErrorPage from './Pages/ErrorPage/ErrorPage';
 
   import Root from './Pages/Root/Root';
+import DetailsPage from './Pages/DetailsPage/DetailsPage';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,13 @@ const router = createBrowserRouter([
         {
           path: "/",
           element:<Home></Home>,
+  
+        },
+
+        {
+          path: "/details/:id",
+          element:<DetailsPage></DetailsPage>,
+          loader: () => fetch('/game.json'),
   
         },
       
